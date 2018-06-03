@@ -1,4 +1,7 @@
-#!/bin/sh
+#!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
+
 IMAGE=k8r.eu/justjanne/quasseldroid-helper-bot
 TAGS=$(git describe --always --tags HEAD)
 DEPLOYMENT=quasseldroid-helper-bot
