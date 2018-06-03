@@ -1,0 +1,8 @@
+hash: 5d07684a0b4bfd1931fa78901e4432aadb8182a496da1a42805789f2338e0804
+updated: 2018-06-03T15:00:47.923678026+02:00
+imports:
+- name: github.com/lrstanley/girc
+  version: 102f17f86306c2152a8c6188f9bb8b0e7288de31
+- name: github.com/xanzy/go-gitlab
+  version: e519e706ac14090a3d11d11150fe6771a1a561cc
+testImports: []

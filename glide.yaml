@@ -1,0 +1,4 @@
+package: git.kuschku.de/justjanne/quasseldroid-helper-bot
+import:
+- package: github.com/lrstanley/girc
+- package: github.com/xanzy/go-gitlab
