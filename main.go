@@ -91,7 +91,7 @@ func main() {
 		}
 	})
 
-	issueRegex := regexp.MustCompile("#\\d+(?=\\b)")
+	issueRegex := regexp.MustCompile("#\\d+\\b")
 	client.Handlers.Add(girc.PRIVMSG, func(client *girc.Client, event girc.Event) {
 		issues := issueRegex.FindAllString(event.Trailing, -1)
 		for _, idString := range issues {
