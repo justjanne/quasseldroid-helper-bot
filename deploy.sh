@@ -7,4 +7,4 @@ TAGS=$(git describe --always --tags HEAD)
 DEPLOYMENT=quasseldroid-helper-bot
 POD=quasseldroid-helper-bot
 
-kubectl set image deployment/$DEPLOYMENT $POD=$IMAGE:$TAGS
+kubectl set image deployment/${DEPLOYMENT} ${POD}=${IMAGE}:${TAGS}
