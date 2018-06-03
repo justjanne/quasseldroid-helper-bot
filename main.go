@@ -95,7 +95,7 @@ func main() {
 	client.Handlers.Add(girc.PRIVMSG, func(client *girc.Client, event girc.Event) {
 		issues := issueRegex.FindAllString(event.Trailing, -1)
 		for _, idString := range issues {
-			id, err := strconv.Atoi(idString)
+			id, err := strconv.Atoi(idString[1:])
 			if err != nil {
 				continue
 			}
@@ -104,9 +104,9 @@ func main() {
 				continue
 			}
 			if issue.ClosedAt != nil {
-				client.Cmd.Reply(event, fmt.Sprintf("#%d (closed): %s – %s", issue.ID, issue.Title, issue.WebURL))
+				client.Cmd.Notice(event.Source.Name, fmt.Sprintf("#%d (closed): %s – %s", issue.IID, issue.Title, issue.WebURL))
 			} else {
-				client.Cmd.Reply(event, fmt.Sprintf("#%d: %s – %s", issue.ID, issue.Title, issue.WebURL))
+				client.Cmd.Notice(event.Source.Name, fmt.Sprintf("#%d: %s – %s", issue.IID, issue.Title, issue.WebURL))
 			}
 		}
 	})
